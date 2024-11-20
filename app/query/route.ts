@@ -38,10 +38,10 @@ export async function GET() {
   //     "Uncomment this file and remove this line. You can delete this file when you are finished.",
   // });
   try {
-    await listInvoices();
+    const inv = await listInvoices();
 
     //Return the invoices
-    return Response.json({ invoices });
+    return Response.json({ inv });
   } catch (error) {
     return Response.json({ error }, { status: 500 });
   }
